@@ -35,7 +35,7 @@ jobs:
           echo "MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}"
   deploy:
     needs: test
-    environment: production # uses secrets stored in the prod environment defined in the repo - repo name: gp-first-env-vars
+    environment: test # uses secrets stored in the prod environment defined in the repo - repo name: gp-first-env-vars
     runs-on: ubuntu-latest
     steps:
       - name: Output information
