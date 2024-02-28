@@ -11,8 +11,8 @@ jobs:
     environment: test # uses secrets stored in the test environment defined in the repo - repo name: gp-first-env-vars 
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.gmhqj05.mongodb.net
-      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
-      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      MONGODB_USERNAME: 'gpatino2'
+      MONGODB_PASSWORD: 'RgIiObOV5i0fRCVZ'
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
