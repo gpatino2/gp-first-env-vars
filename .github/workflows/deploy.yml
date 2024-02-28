@@ -11,8 +11,8 @@ jobs:
     environment: test # uses secrets stored in the test environment defined in the repo - repo name: gp-first-env-vars 
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.gmhqj05.mongodb.net
-      MONGODB_USERNAME: 'gpatino2'
-      MONGODB_PASSWORD: 'RgIiObOV5i0fRCVZ'
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +35,7 @@ jobs:
           echo "MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}"
   deploy:
     needs: test
-    environment: test # uses secrets stored in the prod environment defined in the repo - repo name: gp-first-env-vars
+    environment: production # uses secrets stored in the prod environment defined in the repo - repo name: gp-first-env-vars
     runs-on: ubuntu-latest
     steps:
       - name: Output information
